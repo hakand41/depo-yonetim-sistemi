@@ -1,0 +1,26 @@
+{% extends "layout.html" %} 
+
+{% block body %} 
+<div class="container bg-light p-4 rounded">
+    <h1 class="mt-4 text-primary">Fatura Detayı</h1>
+
+    {% if fatura %}
+        <div class="mt-4">
+            <h2 class="text-info">Fatura Bilgileri</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong class="text-success">Fatura ID:</strong> {{ fatura.id }}</li>
+                <li class="list-group-item"><strong class="text-success">Ürün ID:</strong> {{ fatura.urun_id }}</li>
+                <li class="list-group-item"><strong class="text-success">Fiyat:</strong> {{ fatura.fiyat }}</li>
+                <li class="list-group-item"><strong class="text-success">Tarih:</strong> {{ fatura.created_at }}</li>
+                <li class="list-group-item"><strong class="text-success">Son Güncellenme Tarihi:</strong> {{ fatura.updated_at }}</li>
+            </ul>
+        </div>
+    {% else %}
+        <p class="mt-4 text-danger">Böyle bir fatura bulunamadı.</p>
+    {% endif %}
+
+    <div class="mt-4">
+        <a href="/faturalar/" class="btn btn-primary">Geri Dön</a>
+    </div>
+</div>
+{% endblock body %}

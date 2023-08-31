@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+2e4e70
+{% block body %}
+<div class="jumbotron text-center text-light" style = "background-color: #2e4e70;">
+    <h1 class="display-4">Depo Yönetim Sistemine Hoşgeldiniz</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <p class="text-center">
+                {% if request.user.is_authenticated %}
+                    Giriş Yapılmış: {{ request.user.username }}
+                {% else %} 
+                    Giriş Yapılmamış
+                {% endif %}
+            </p>
+
+            {% if faturalar %} 
+                <hr>
+                <h4 class="text-center">Faturalar</h4>
+                {% for fatura in faturalar %} 
+                    <div class="card mb-3" style = "background-color: rgb(202, 202, 202);">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="/faturalar/{{ fatura.id }}">{{ fatura.created_at }}</a></h5>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <hr>
+                <div class="jumbotron text-center">
+                    <p>Henüz bir ürün bulunmamaktadır.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

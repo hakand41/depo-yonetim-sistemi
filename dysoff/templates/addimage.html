@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Resim Ekle</h1>
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Resim Ekle</button>
+  </form>
+  
+{% endblock body %}

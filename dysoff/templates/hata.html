@@ -1,0 +1,17 @@
+<!-- grafik/templates/hata.html -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container bg-light p-4 rounded">
+    <h1 class="mt-4 text-danger">Hata</h1>
+
+    <div class="mt-4">
+        <p class="lead">Ürün için yeterli veri bulunamadı veya bir hata oluştu.</p>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'index' %}" class="btn btn-primary">Geri Dön</a>
+    </div>
+</div>
+{% endblock content %}

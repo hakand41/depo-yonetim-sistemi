@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <form class="d-flex" role="search" method="POST">
+        {% csrf_token %}
+        <input
+           class="form-control me-2"
+           type="search"
+           placeholder="Arama"
+           name="keyword"
+           required
+           aria-label="Arama"
+        >
+        <button class="btn btn-outline-success" type="submit">Ara</button>
+    </form>
+</div>
+
+{% if urun %}
+    <div class="jumbotron text-center">
+        <h3><a href="/urunler/{{ urun.id }}">{{ urun.urun_adi }}</a></h3>
+    </div>
+{% else %}
+    <p>Ürün bulunamadı.</p>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %} 
+
+{% block body %} 
+<h1>Resim Detayı</h1>
+
+{% if resim %}
+    <h2>Resim Bilgileri</h2>
+    <ul>
+        {% if resim.resim %} 
+            <figure class="mb-4"><img class="img-fluid rounded" src="{{ resim.resim.url }}" alt="..." /></figure> 
+        {% endif %}
+        <li><strong>Başlık:</strong> {{ resim.title }}</li>
+    </ul>
+{% else %}
+    <p>Böyle bir resim bulunamadı.</p>
+{% endif %}
+
+{% endblock body %}

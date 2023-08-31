@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h3>KONTROL PANELİ</h3>
+    <p>Ekleme, güncelleme ve silme işlemleri yapılabilir</p>
+</div>
+<p>
+    {% if request.user.is_authenticated %}
+       <p class="btn-success">Giriş Yapılmış {{request.user.username}}</p> 
+        <div class="jumbotron text-center">
+            <p class="btn-dark">Ürün İşlemleri</p>
+            <a class = "btn btn-danger" href="/addproduct">Ürün Ekle</a>
+            <a class = "btn btn-danger" href="/updateurun">Ürün Güncelle</a>
+            <a class = "btn btn-danger" href="/deleteurun">Ürün Sil</a>
+        </div>
+        <div class="jumbotron text-center">
+            <p class="btn-dark">Fatura İşlemleri</p>
+            <a class = "btn btn-danger" href="/addfatura">Fatura Ekle</a>
+            <a class = "btn btn-danger" href="/updatefatura">Fatura Güncelle</a>
+            <a class = "btn btn-danger" href="/deletefatura">Fatura Sil</a>
+        </div>
+        <div class="jumbotron text-center">
+            <p class="btn-dark">Resim İşlemleri</p>
+            <a class = "btn btn-danger" href="/addimage">Resim Ekle</a>
+            <a class = "btn btn-danger" href="/updateresim">Resim Güncelle</a>
+            <a class = "btn btn-danger" href="/deleteresim">Resim Sil</a>
+        </div>
+    {% else %} 
+        Giriş Yapılmamış
+    {% endif %}
+     
+            
+</p>
+
+{% endblock body %}

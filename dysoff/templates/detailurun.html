@@ -1,0 +1,31 @@
+{% extends "layout.html" %} 
+
+{% block body %} 
+<div class="container bg-light p-4 rounded">
+    <h1 class="mt-4 text-primary">Ürün Detayı</h1>
+
+    {% if urun %}
+        <div class="mt-4">
+            <h2 class="text-info">Ürün Bilgileri</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong class="text-success">Ürün ID:</strong> {{ urun.id }}</li>
+                <li class="list-group-item"><strong class="text-success">Ürün Adedi:</strong> {{ urun.urun_adedi }}</li>
+                <li class="list-group-item"><strong class="text-success">Ürün Adı:</strong> {{ urun.urun_adi }}</li>
+                <li class="list-group-item"><strong class="text-success">Resim ID:</strong> {{ urun.resim.id }}</li>
+                <li class="list-group-item"><strong class="text-success">Resim Adı:</strong> {{ urun.resim.title }}</li>
+                <li class="list-group-item"><strong class="text-success">Resim:</strong> <img src="{{ urun.resim.resim.url }}" alt="{{ urun.resim.title }}" /></li>
+            </ul>
+        </div>
+        <div class="mt-4">
+            <h2 class="text-info">Fiyat Değişimi Grafiği</h2>
+            <img src="{% url 'urun_fiyat_grafik' urun.id %}" alt="{{ urun.urun_adi }} Fiyat Değişimi">
+        </div>
+    {% else %}
+        <p class="mt-4 text-danger">Böyle bir ürün bulunamadı.</p>
+    {% endif %}
+
+    <div class="mt-4">
+        <a href="/urunler/" class="btn btn-primary">Geri Dön</a>
+    </div>
+</div>
+{% endblock body %}

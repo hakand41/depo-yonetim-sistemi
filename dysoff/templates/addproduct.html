@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %} 
+
+<div class="jumbotron">
+    <h3>Ürün Ekleme Formu</h3>
+    <hr>
+    <form method="post">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <br>
+        <button type="submit" class="btn btn-danger">Ürün Ekle</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Ürünler{% endblock %}
+
+{% block content %}
+    <h1>Ürünler</h1>
+    <ul>
+        {% for urun in urunler %}
+            <li><a href="/urun_fiyat_grafik/?urun_id={{ urun.id }}">{{ urun.urun_adi }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

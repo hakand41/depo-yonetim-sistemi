@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container bg-light p-4 rounded">
+    <h1 class="mt-4 text-primary">Ürünler</h1>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Ürün ID</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Adedi</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for urun in urunler %}
+            <tr>
+                <td>{{ urun.id }}</td>
+                <td>{{ urun.urun_adi }}</td>
+                <td>{{ urun.urun_adedi }}</td>
+                <td>
+                    <a href="{% url 'urun_up' urun.id %}" class="btn btn-danger btn-sm">Güncelle</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="mt-4">
+        <a href="/dashboard/" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</div>
+{% endblock body %}

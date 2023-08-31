@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container bg-light p-4 rounded">
+    <h1 class="mt-4 text-primary">Resim Güncelle</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Resim Güncelle</button>
+    </form>
+
+    <div class="mt-4">
+        <a href="/dashboard/" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</div>
+{% endblock body %}
