@@ -7,7 +7,7 @@ Uygulama basit bir depo yönetim sistemidir.
 # Uygulamanın anasayfası aşağıdaki gibidir;
 ![1](https://github.com/hakand41/dysoff/assets/98481026/baa2a64d-36ea-410a-a891-3388678d62c6)
 
-# Uygulamanın ürün detay sayfası ve fiyatlara göre dinamik bir şekilde ürün-fiyat grafiği çizilen sayfa aşağıdaki gibidir;
+# Uygulamanın ürün detaylarının ve fiyatlara göre dinamik bir şekilde ürün-fiyat grafiği bulunan sayfa aşağıdaki gibidir;
 ![2](https://github.com/hakand41/dysoff/assets/98481026/de835418-f15e-453d-9d75-18cc18ad2373)
 
 # Uygulamanın sadece giriş yapılarak kullanılabilen kontrol paneli sayfası aşağıdaki gibidir;
