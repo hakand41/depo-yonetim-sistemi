@@ -128,7 +128,21 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-"""ALLOWED_IPS = [
-    '127.0.0.1',  # Örnek: Yerel makineye izin verilen IP
-    '192.168.1.1',  # Örnek: Başka bir IP adresi
-]"""
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'admin_panel.log', # Logların kaydedileceği dosya
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
